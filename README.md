@@ -1,6 +1,6 @@
-#qWorkflow Library
+# qWorkflow Library
 
-##A. Introduction
+## A. Introduction
 This is an AppleScript library for creating workflows with Alfred 2. This library provides an object-oriented class with functions for working with plist settings files, reading and writing data to files, generating Alfred feedback results, requesting remote data, and more (make sure you read the [FULL DOCUMENTATION](https://github.com/qlassiqa/qWorkflow/blob/master/documentation/Documentation.md) to get a grip on how to properly use this library).
 
 It was originally created by [David Ferguson using PHP](https://github.com/jdfwarrior/Workflows), and was entirely rewritten by me using AppleScript to provide the same functionality to all my fellow AppleScript lovers.
@@ -13,7 +13,7 @@ So you may be asking yourself:
 
 **NOTE:** the `compiled source` folder contains the ready-to-use library script (the files inside this folder should be put inside your Alfred workflow's folder); the `uncompiled source` folder contains the plain .applescript file that you can view online, and it contains fully commented code to better understand what I did there.
 
-##B. Features
+## B. Features
 There are a lot of things you can do with this library to make your life a lot easier when creating & programming your Alfred Workflows, so here's a list of the most important features (the list will grow while I improve the library):
 
 * **object-oriented approach** to write less & more readable code
@@ -24,7 +24,7 @@ There are a lot of things you can do with this library to make your life a lot e
 * **sending notifications** through the Notification Center (thanks to [Daji-Djan](https://github.com/Daij-Djan/DDMountainNotifier))
 * various **internal utilities that improve AppleScript** (string and date manipulation, file system utilities)
 
-##C. Known Limitations
+## C. Known Limitations
 Now, because AppleScript is a bit limited in terms of capabilities, some functionality isn't available right now, but I will try to improve this library further.
 
 * **no JSONP support <u>yet</u>** - AppleScript doesn't know anything about JSON or JSONP, so I had to get help from [Mousedown Software](http://www.mousedown.net/mouseware/index.html), and they provided me with a fully functional and really fast JSON helper for which I've made a wrapper to embed it inside my library, and hopefully they will add JSONP support in the near feature; but until then you will have to make sure you're only working with JSON data
@@ -44,7 +44,7 @@ Now, because AppleScript is a bit limited in terms of capabilities, some functio
 	}
 	```
 
-##D. Initialization
+## D. Initialization
 Before you write any code, it's imperative that you copy the `q_workflow.scpt` library file. 
 
 <p style="color: red;"><strong>NOTE:</strong> If you plan to use the NotificationCenter methods to trigger notifications or if you plan on using the JSON capabilities of this library, then it's vital that you also copy the `bin` folder to your Workflow folder "as is" since it contains the helper utilities that provide these extra features. Note that trying to send notifications or read JSON without having the bin folder in your Workflow folder will produce no result (and yes, the utilities have to stay inside the bin folder at all time with the current filenames for this to work).</p>
@@ -71,7 +71,7 @@ set wf to wlib's new_workflow_with_bundle("com.mycompany.mybundlename")
 
 * since AppleScript doesn't support optional parameters, there are 2 constructors: `new_workflow()` with no parameters, which creates a new class that automatically fetches the bundle name from Alfred, and `new_workflow_with_bundle(<name>)`, which takes 1 parameter with the desired bundle name if none was specified in Alfred.
 
-##E. Methods
+## E. Methods
 For more info, tips and examples on how to use the following methods, please consult the accompanying documentation (again, it is vital that you look at the [FULL DOCUMENTATION](https://github.com/qlassiqa/qWorkflow/blob/master/documentation/Documentation.md) to get a grip on how to properly use this library).
 
 This library provides 2 categories of methods, namely **workflow methods** and **utility methods**. Workflow methods can be used only after creating a new workflow class (these are also known as instance methods), and provide basic handlers to deal with Alfred Workflows. Utility methods, on the other hand, contain handlers that are used internally by the workflow methods, as well as useful handlers for regular use that enhance AppleScript's capabilities (these include string and date manipulation, file system checks, sending notification, etc.)
@@ -113,7 +113,7 @@ This library provides 2 categories of methods, namely **workflow methods** and *
 16. q\_encode\_url(str)
 17. q\_decode\_url(str)
 
-##F. Licensing
+## F. Licensing
 This library is free to use, copy and modify, and is provided "AS IS", without warranty of any kind. However, I will greatly appreciate it if you'd give me credit and mention me in your works or anywhere you use this library.
 
 The use of the helper utilities shipped with this library is subject to each author's license, which can be read at the links provided in [section B].
